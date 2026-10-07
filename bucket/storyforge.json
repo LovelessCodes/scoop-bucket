@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "description": "A modern desktop launcher and mod manager for Vintage Story",
+    "homepage": "https://github.com/LovelessCodes/StoryForge",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/LovelessCodes/StoryForge/releases/download/storyforge-v2.0.0/Story.Forge_2.0.0_x64-setup.exe#/dl.7z",
+            "hash": "4789e3bb228f101ffaa9ca783bccfde99e41559fbf58f0f302844edf48af5704"
+        }
+    },
+    "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse -ErrorAction Ignore",
+    "shortcuts": [
+        [
+            "StoryForge.exe",
+            "Story Forge"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/LovelessCodes/StoryForge",
+        "re": "storyforge-v([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/LovelessCodes/StoryForge/releases/download/storyforge-v$version/Story.Forge_$version_x64-setup.exe#/dl.7z"
+            }
+        }
+    }
+}
