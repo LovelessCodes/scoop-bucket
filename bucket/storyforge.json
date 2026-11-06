@@ -12,7 +12,12 @@
   },
   "##": "Scoop unpacks the NSIS installer; post_install drops the installer helpers. Releases that ship Story.Forge_<version>_x64-portable.zip use that instead.",
   "post_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Force -Recurse -ErrorAction SilentlyContinue",
-  "shortcuts": [["StoryForge.exe", "Story Forge"]],
+  "shortcuts": [
+    [
+      "StoryForge.exe",
+      "Story Forge"
+    ]
+  ],
   "checkver": {
     "github": "https://github.com/LovelessCodes/StoryForge",
     "regex": "storyforge-v([\\d.]+)"
